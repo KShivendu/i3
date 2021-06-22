@@ -22,7 +22,19 @@ i3-gaps is a fork of [i3wm](https://www.i3wm.org), a tiling window manager for X
 
 If you're running an Arch-based distro, you can install it from the AUR (`i3-gaps-rounded`).
 
-If not, unless there is a repository for your distro, you will probably have to compile it yourself. To do so, refer to the [wiki](https://github.com/Airblader/i3/wiki/Building-from-source).
+For Ubuntu (atleast for 18.04+)
+```
+git clone https://github.com/resloved/i3.git
+sudo apt install -y install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf xutils-dev libtool automake
+sudo apt install -y make autoconf libxcb-xrm-dev libxcb-shape0-dev
+autoreconf --force --install
+rm -rf build && mkdir build
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make -j8
+sudo make install
+```
+
+Otherwise, you will probably have to compile it yourself. To do so, refer to the [wiki](https://github.com/Airblader/i3/wiki/Building-from-source).
 
 *Note:* When cloning the repo, replace `Airblader/i3` with `resloved/i3`.
 
