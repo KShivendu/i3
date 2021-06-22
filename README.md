@@ -30,6 +30,7 @@ sudo apt install -y make autoconf libxcb-xrm-dev libxcb-shape0-dev
 autoreconf --force --install
 rm -rf build && mkdir build
 ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+# If you face some error try to find the correspoding library using "apt search"
 make -j8
 sudo make install
 ```
